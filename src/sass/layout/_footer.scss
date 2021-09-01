@@ -14,7 +14,11 @@ footer {
   max-width: 100% !important;
   z-index: 0;
 
-  a {
-    color: var(--darkGrayishBlue);
+  .footer-section {
+    display: inline-flex;
+
+    a {
+      color: var(--darkGrayishBlue);
+    }
   }
 }

@@ -94,8 +94,12 @@
     flex-wrap: wrap;
     padding-bottom: 10px;
 
-    p:first-child {
-      margin-bottom: 10px;
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      p:first-child {
+        margin-bottom: 10px;
+      }
     }
   }
 }

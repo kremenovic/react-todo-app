@@ -4,17 +4,20 @@ function Attribution() {
   return (
     <>
       <footer>
-        <p>
-          Challenge by{" "}
-          <a href="https://www.frontendmentor.io?ref=challenge">
-            Frontend Mentor.
-          </a>
-          &nbsp;
-        </p>
-        <p>
-          Coded by{" "}
-          <a href="https://github.com/kremenovic"> Stefan Kremenovic</a>.
-        </p>
+        <div className="footer-section">
+          <p>
+            Challenge by{" "}
+            <a href="https://www.frontendmentor.io?ref=challenge">
+              Frontend Mentor.
+            </a>
+            &nbsp;
+          </p>
+          <br></br>
+          <p>
+            Coded by{" "}
+            <a href="https://github.com/kremenovic"> Stefan Kremenovic</a>.
+          </p>
+        </div>
       </footer>
     </>
   );

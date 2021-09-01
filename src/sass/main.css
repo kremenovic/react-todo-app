@@ -13,6 +13,7 @@
   }
   header h1 {
     padding-top: 48px;
+    font-size: 36px !important;
   }
   header img {
     padding-top: 48px;
@@ -24,7 +25,16 @@
     padding-left: 25px;
     padding-right: 25px;
   }
-  .todo_section .row {
+  .addTodo form input {
+    font-size: 12px;
+  }
+  .todo_section__item .todo_text p {
+    font-size: 12px;
+  }
+  .todo_section__info {
+    font-size: 12px !important;
+  }
+  .row {
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -37,6 +47,11 @@
     margin: 0 auto;
     position: relative;
     margin-top: 25px;
+    display: block !important;
+    font-size: 14px;
+    color: var(--darkGrayishBlue);
+  }
+  .filtersMobile .row_filters {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -47,10 +62,10 @@
         -ms-flex-align: center;
             align-items: center;
     height: 64px;
-    font-size: 14px;
-    color: var(--darkGrayishBlue);
     border-radius: 5px;
     background-color: #fff;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   .filtersMobile .filters {
     font-weight: 700;
@@ -62,7 +77,29 @@
     color: var(--brightBlue);
   }
   .filtersMobile .filters span:last-child {
-    padding-left: 0px;
+    padding-right: 0px;
+  }
+  footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-bottom: 10px;
+  }
+  footer .footer-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .footer-section p:first-child {
+    margin-bottom: 10px;
   }
 }
 
@@ -206,11 +243,67 @@ input {
   font-family: "Josefin Sans", sans-serif !important;
 }
 
+@-webkit-keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 header {
   background-image: url("../../images/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 header .header-container {
@@ -236,19 +329,24 @@ header h1 {
   font-weight: bold;
 }
 
+header img {
+  cursor: pointer;
+}
+
 .addTodo {
   max-width: 540px;
   width: 100%;
   margin: 0 auto;
   position: relative;
   margin-top: -140px;
+  z-index: 1;
 }
 
 .addTodo svg {
   position: absolute;
   margin-left: 25px;
   margin-top: 18px;
-  fill: #fff;
+  fill: transparent;
   stroke: var(--veryDarkBlue);
   stroke-width: 4px;
   width: 24px;
@@ -261,6 +359,9 @@ header h1 {
   height: 64px;
   border-radius: 5px;
   padding-left: 73px;
+  background: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .todo_section {
@@ -269,6 +370,7 @@ header h1 {
   margin: 0 auto;
   position: relative;
   margin-top: 25px;
+  z-index: 1;
 }
 
 .todo_section__item {
@@ -287,6 +389,9 @@ header h1 {
   cursor: pointer;
   font-size: 18px;
   background-color: #fff;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .todo_section__item:first-child {
@@ -315,6 +420,8 @@ header h1 {
 .todo_section__item .todo_text p.completed {
   text-decoration: line-through;
   color: var(--lightGrayisBlue);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .todo_section__item .todo_text span {
@@ -323,11 +430,11 @@ header h1 {
 }
 
 .todo_section__item .todo_text span:hover svg {
-  stroke: red;
+  stroke: var(--brightBlue);
 }
 
 .todo_section__item .todo_text span svg {
-  fill: #fff;
+  fill: transparent;
   stroke: var(--veryDarkBlue);
   stroke-width: 4px;
   width: 24px;
@@ -355,6 +462,8 @@ header h1 {
 
 .todo_section__item .delete_icon {
   display: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .todo_section__item .delete_icon.active {
@@ -375,14 +484,20 @@ header h1 {
   height: 64px;
   font-size: 14px;
   color: var(--darkGrayishBlue);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
   background-color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.todo_section__info span:hover {
-  color: var(--veryDarkGrayishBlue);
+.todo_section__info span.clearSpan {
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.todo_section__info span.clearSpan:hover {
+  color: var(--veryDarkGrayishBlue);
 }
 
 .todo_section__info .filtersDesktop {
@@ -402,6 +517,13 @@ header h1 {
 
 .todo_section__info .filters span {
   padding-right: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.todo_section__info .filters span:hover {
+  color: var(--veryDarkGrayishBlue);
+  cursor: pointer;
 }
 
 .todo_section__info .filters span.active {
@@ -414,6 +536,123 @@ header h1 {
 
 .filtersMobile {
   display: none;
+  z-index: 1;
+}
+
+footer {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  padding-bottom: 40px;
+  color: var(--darkGrayishBlue);
+  font-size: 14px;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  max-width: 100% !important;
+  z-index: 0;
+}
+
+footer .footer-section {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+footer .footer-section a {
+  color: var(--darkGrayishBlue);
+}
+
+body.dark-mode {
+  background-color: var(--veryDarkBlue);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode header {
+  background-image: url("../../images/bg-desktop-dark.jpg");
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .addTodo input {
+  background-color: var(--veryDarkGrayishBlue2);
+  color: var(--veryLightGray);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .addTodo svg {
+  fill: var(--veryDarkGrayishBlue2);
+  stroke: var(--veryLightGray);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .todo_section__item {
+  border-color: var(--darkGrayishBlue);
+  background-color: var(--veryDarkGrayishBlue2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .todo_section__item .todo_text p {
+  color: var(--lightGrayishBlue);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .todo_section__item .todo_text p.completed {
+  color: var(--darkGrayishBlue);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body.dark-mode .todo_section__item .todo_text span svg {
+  fill: var(--veryDarkGrayishBlue2);
+  stroke: var(--veryLightGray);
+}
+
+body.dark-mode .todo_section__item .todo_text span svg.active {
+  fill: transparent;
+}
+
+body.dark-mode .todo_section__info {
+  background-color: var(--veryDarkGrayishBlue2);
+}
+
+body.dark-mode .todo_section__info span.clearSpan {
+  cursor: pointer;
+}
+
+body.dark-mode .todo_section__info span.clearSpan:hover {
+  color: var(--veryLightGray);
+}
+
+body.dark-mode .todo_section__info span .filters :hover {
+  color: var(--veryLightGray);
+}
+
+body.dark-mode .row_filters {
+  background-color: var(--veryDarkGrayishBlue2);
+}
+
+@media only screen and (max-width: 768px) {
+  body.dark-mode header {
+    background-image: url("../../images/bg-mobile-dark.jpg");
+  }
 }
 
 :root {
@@ -432,7 +671,7 @@ header h1 {
   --veryDarkBlue: hsl(235, 21%, 11%);
   --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
   --lightGrayishBlue: hsl(234, 39%, 85%);
-  --lightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue2: hsl(236, 33%, 92%);
   --darkGrayishBlue: hsl(234, 11%, 52%);
   --veryDarkGrayishBlue: hsl(233, 14%, 35%);
   --veryDarkGrayishBlue2: hsl(237, 14%, 26%);
@@ -441,6 +680,8 @@ header h1 {
 body {
   background-color: var(--veryLightGray);
   height: 100vh;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #root {
@@ -448,6 +689,17 @@ body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
+}
+
+.addAnimation {
+  opacity: 0;
+  -webkit-animation: new-item-animation 0.3s linear forwards;
+  animation: new-item-animation 0.3s linear forwards;
+}
+
+.removeAnimation {
+  -webkit-animation: removed-item-animation 0.3s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+          animation: removed-item-animation 0.3s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
 }
 /*# sourceMappingURL=main.css.map */
