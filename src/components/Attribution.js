@@ -6,18 +6,14 @@ function Attribution() {
       <footer>
         <p>
           Challenge by{" "}
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          <a href="https://www.frontendmentor.io?ref=challenge">
             Frontend Mentor.
           </a>
           &nbsp;
         </p>
         <p>
           Coded by{" "}
-          <a href="https://github.com/kremenovic" target="_blank">
-            {" "}
-            Stefan Kremenovic
-          </a>
-          .
+          <a href="https://github.com/kremenovic"> Stefan Kremenovic</a>.
         </p>
       </footer>
     </>
