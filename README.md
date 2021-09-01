@@ -2,7 +2,7 @@
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
 
-<img src="https://i.imgur.com/pzmJ31P.png"/>
+<a href="https://kremenovic-react-todo-app.netlify.app/"><img src="https://i.imgur.com/pzmJ31P.png"/></a>
 
 ## Table of contents
 
@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [frontendmentor.io](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub/react-todo-app-using-sass-and-bem-dqZ_IjAUJ)
+- Live Site URL: [https://kremenovic-react-todo-app.netlify.app/](https://kremenovic-react-todo-app.netlify.app/)
 
 ## My process
 
@@ -96,3 +96,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Live Demo
+
+<a href="https://kremenovic-react-todo-app.netlify.app/">Click here to see live demo</a>
