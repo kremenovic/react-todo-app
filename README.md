@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor.io](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub/react-todo-app-using-sass-and-bem-dqZ_IjAUJ)
+- Solution URL: [frontendmentor.io](https://www.frontendmentor.io/solutions/react-todo-app-using-sass-and-bem-dqZ_IjAUJ)
 - Live Site URL: [https://kremenovic-react-todo-app.netlify.app/](https://kremenovic-react-todo-app.netlify.app/)
 
 ## My process
