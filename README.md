@@ -2,6 +2,8 @@
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
 
+<img src="https://i.imgur.com/pzmJ31P.png"/>
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -32,13 +34,9 @@ Users should be able to:
 - Clear all completed todos
 - Toggle light and dark mode
 
-### Screenshots
+### Screenshot
 
-<strong>Light Mode</strong>
-
-<img src="https://i.imgur.com/pzmJ31P.png"/>
-
-<strong>Dark Mode</strong>
+<h4>Dark Mode</h4>
 
 <img src="https://i.imgur.com/4YDOQq7.png"/>
 
