@@ -559,7 +559,6 @@ footer {
   color: var(--darkGrayishBlue);
   font-size: 14px;
   margin-top: 40px;
-  position: fixed;
   bottom: 0;
   max-width: 100% !important;
   z-index: 0;
@@ -679,13 +678,14 @@ body.dark-mode .row_filters {
 
 body {
   background-color: var(--veryLightGray);
-  height: 100vh;
+  height: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 #root {
   position: relative;
+  height: 100%;
 }
 
 .hide {
