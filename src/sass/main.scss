@@ -1,0 +1,68 @@
+@import "./abstracts/mixins";
+@import "./abstracts/responsive";
+
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/animations";
+
+@import "./layout/header";
+@import "./layout/body";
+@import "./layout/footer";
+
+@import "./themes/dark";
+
+:root {
+  // primary
+  --brightBlue: hsl(220, 98%, 61%);
+  --checkBackground: linear-gradient(
+    2deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --borderColor: #979797;
+
+  // light theme
+  --veryLightGray: hsl(0, 0%, 98%);
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayisBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  // dark theme
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --lightGrayishBlue: hsl(234, 39%, 85%);
+  --lightGrayishBlue2: hsl(236, 33%, 92%);
+  --darkGrayishBlue: hsl(234, 11%, 52%);
+  --veryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --veryDarkGrayishBlue2: hsl(237, 14%, 26%);
+}
+
+body {
+  background-color: var(--veryLightGray);
+  height: 100vh;
+  @include transition;
+}
+
+#root {
+  position: relative;
+}
+
+// hide class to hide element
+// used to hide filters mobile/desktop
+
+.hide {
+  display: none !important;
+}
+
+.addAnimation {
+  opacity: 0;
+  -webkit-animation: new-item-animation 0.3s linear forwards;
+  -o-animation: new-item-animation 0.3s linear forwards;
+  animation: new-item-animation 0.3s linear forwards;
+}
+
+.removeAnimation {
+  animation: removed-item-animation 0.3s cubic-bezier(0.55, -0.04, 0.91, 0.94)
+    forwards;
+}

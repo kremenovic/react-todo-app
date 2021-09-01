@@ -1,0 +1,80 @@
+body.dark-mode {
+  background-color: var(--veryDarkBlue);
+  @include transition;
+
+  header {
+    background-image: url("../../images/bg-desktop-dark.jpg");
+    @include transition;
+  }
+
+  .addTodo {
+    input {
+      background-color: var(--veryDarkGrayishBlue2);
+      color: var(--veryLightGray);
+      @include transition;
+    }
+
+    svg {
+      fill: var(--veryDarkGrayishBlue2);
+      stroke: var(--veryLightGray);
+      @include transition;
+    }
+  }
+
+  .todo_section {
+    &__item {
+      border-color: var(--darkGrayishBlue);
+      background-color: var(--veryDarkGrayishBlue2);
+      @include transition;
+
+      .todo_text {
+        p {
+          color: var(--lightGrayishBlue);
+          @include transition;
+
+          &.completed {
+            color: var(--darkGrayishBlue);
+            @include transition;
+          }
+        }
+        span {
+          svg {
+            fill: var(--veryDarkGrayishBlue2);
+            stroke: var(--veryLightGray);
+
+            &.active {
+              fill: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    &__info {
+      span.clearSpan {
+        cursor: pointer;
+        &:hover {
+          color: var(--veryLightGray);
+        }
+      }
+      background-color: var(--veryDarkGrayishBlue2);
+      span {
+        .filters {
+          :hover {
+            color: var(--veryLightGray);
+          }
+        }
+      }
+    }
+  }
+
+  .row_filters {
+    background-color: var(--veryDarkGrayishBlue2);
+  }
+
+  @media only screen and (max-width: 768px) {
+    header {
+      background-image: url("../../images/bg-mobile-dark.jpg");
+    }
+  }
+}

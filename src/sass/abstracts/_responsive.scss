@@ -1,0 +1,101 @@
+@media only screen and (max-width: 768px) {
+  header {
+    background-image: url("../../images/bg-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 27px;
+    padding-right: 25px;
+    height: 200px;
+
+    .header-container {
+      padding-top: 0px !important;
+    }
+
+    h1 {
+      padding-top: 48px;
+      font-size: 36px !important;
+    }
+
+    img {
+      padding-top: 48px;
+    }
+  }
+
+  .addTodo {
+    margin-top: -175px !important;
+
+    form {
+      @include sidePaddings;
+
+      input {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .todo_section {
+    &__item {
+      .todo_text {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    &__info {
+      font-size: 12px !important;
+    }
+  }
+
+  .row {
+    @include sidePaddings;
+  }
+
+  .filtersDesktop {
+    display: none;
+  }
+
+  .filtersMobile {
+    @include container;
+    margin-top: 25px;
+    display: block !important;
+
+    font-size: 14px;
+    color: var(--darkGrayishBlue);
+
+    .row_filters {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      height: 64px;
+      border-radius: 5px;
+      background-color: #fff;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    .filters {
+      font-weight: 700;
+      span {
+        padding-right: 25px;
+
+        &.active {
+          color: var(--brightBlue);
+        }
+
+        &:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+  footer {
+    justify-content: center;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+
+    p:first-child {
+      margin-bottom: 10px;
+    }
+  }
+}

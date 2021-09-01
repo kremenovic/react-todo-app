@@ -1,0 +1,24 @@
+@mixin container {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@mixin svg {
+  fill: transparent;
+  stroke: var(--veryDarkBlue);
+  stroke-width: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+@mixin sidePaddings {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@mixin transition {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
